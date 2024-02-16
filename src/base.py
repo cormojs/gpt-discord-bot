@@ -64,11 +64,11 @@ class Prompt:
     def render_system_prompt(self):
         return f"\n{SEPARATOR_TOKEN}".join(
             [self.header.render()]
-            + [Message("System", "Example conversations:").render()]
+            + [Message("System", "会話の例:").render()]
             + [conversation.render() for conversation in self.examples]
             + [
                 Message(
-                    "System", "Now, you will work with the actual current conversation."
+                    "System", "OK、じゃあ実際の会話を始めよう。"
                 ).render()
             ]
         )
